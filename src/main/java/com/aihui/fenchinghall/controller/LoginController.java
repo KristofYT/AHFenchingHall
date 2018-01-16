@@ -10,10 +10,27 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
+
+
+    @RequestMapping(value = "/*",method = RequestMethod.GET)
     public ModelAndView home(HttpSession httpSession){
         ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("index");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/baidumap",method = RequestMethod.GET)
+    public ModelAndView baidumap(HttpSession httpSession){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("baidumap");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/bstrap",method = RequestMethod.GET)
+    public ModelAndView baidumbstrapap(HttpSession httpSession){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("bstrap");
+        return modelAndView;
+    }
+
 }

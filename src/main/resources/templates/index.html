@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1.0;user-scalable=no" />
+    <meta firstName="viewport" content="initial-scale=1.0,user-scalable=no" />
     <title>my map</title>
     <style type="text/css">
         html {
@@ -15,22 +15,24 @@
             padding: 0px;
         }
 
-        #container {
-            height: 100%;
+        #baidumap {
+            width: 50%;
+            height: 50%;
         }
     </style>
+
 
 </head>
 
 <body>
-<div id="map"></div>
+<div id="baidumap"></div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=oB9HQxekIhDbR91BXXymHhGNRHrljb1t&amp;callback=initialize">
 </script>
 <script type="text/javascript">
     function initialize() {
         console.log("hhh");
-        var mp = new BMap.Map('map');
-        mp.centerAndZoom(new BMap.Point(113.924, 22.588655), 11);
+        var mp = new BMap.Map('baidumap');
+        mp.centerAndZoom(new BMap.Point(113.940493, 22.494443), 11);
     }
 </script>
 </body>

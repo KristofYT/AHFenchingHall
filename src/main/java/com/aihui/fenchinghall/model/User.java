@@ -12,7 +12,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private int id;
 
     @Column(name = "email")
@@ -20,12 +20,12 @@ public class User {
     @NotEmpty(message = "Please provide an email address")
     private String email;
 
-    @Column(name = "name")
-    @NotEmpty(message = "Please provide your name")
-    private String name;
+    @Column(name = "first_name")
+    @NotEmpty(message = "Please provide your firstName")
+    private String firstName;
 
     @Column(name = "last_name")
-    @NotEmpty(message = "Please provide your last name")
+    @NotEmpty(message = "Please provide your last firstName")
     private String lastName;
 
     @Column(name = "phone")
@@ -52,12 +52,12 @@ public class User {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

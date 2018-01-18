@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta firstName="viewport" content="initial-scale=1.0,user-scalable=no" />
+    <title>my map</title>
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #baidumap {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=oB9HQxekIhDbR91BXXymHhGNRHrljb1t">
+    </script>
+</head>
+
+<body>
+<div id="baidumap"></div>
+
+<script type="text/javascript">
+    var map = new BMap.Map("baidumap");
+    var point = new BMap.Point(113.924, 22.588655);
+    map.centerAndZoom(point, 15);
+</script>
+</body>
+
+</html>

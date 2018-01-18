@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="container">
+        <div class="tbox">
+            <div id="player">
+                <ul class="cycle-img">
+                    <li><img src='/banners/photo01.jpg' />
+                        <h3><a href='#'></a></h3></li>
+                    <li><img src='/banners/photo02.jpg' />
+                        <h3><a href='#'></a></h3></li>
+                    <li><img src='/banners/photo03.jpg' />
+                        <h3><a href='#'></a></h3></li>
+                    <li><img src='/banners/photo04.jpg' />
+                        <h3><a href='#'></a></h3></li>
+                </ul>
+                <cite class="Nubbt">
+                    <span class='on'></span><span ></span><span ></span><span ></span>
+                </cite>
+            </div>
+
+            <div class="order2">
+                <form id="R" name="R" method="post" action="sub.asp" onsubmit="return RSub();">
+                    <h3>预约免费体验</h3>
+                    <ul>
+                        <li><input type="text" class="text" onblur="" onfocus="" value="姓名" name="Name" id="Name" /><strong>*</strong></li>
+                        <li>
+                            <select name="Age" id="Age">
+                                <option value="">年龄选择</option>
+
+                                <option value="5-6岁">5-6岁</option>
+
+                                <option value="6-7岁">6-7岁</option>
+
+                                <option value="7-8岁">7-8岁</option>
+
+                                <option value="8-9岁">8-9岁</option>
+
+                                <option value="9-10岁">9-10岁</option>
+
+                                <option value="10-16岁">10-16岁</option>
+
+                                <option value="成人">成人</option>
+
+                            </select><strong>*</strong></li>
+                        <li><input type="text" class="text" onblur="" onfocus="" value="联系电话" name="Tel" id="Tel" /><strong>*</strong></li>
+                        <li>
+                            <select name="SubID" id="SubID">
+                                <option value="">体验场馆选择</option>
+
+                                <option value="7">北京奥体中心</option>
+
+                                <option value="15">北京海淀中心</option>
+
+                                <option value="8">佛山中心</option>
+
+                                <option value="9">深圳南山中心</option>
+
+                                <option value="10">深圳福田中心</option>
+
+                                <option value="11">广州小西关中心</option>
+
+                                <option value="12">广州赤岗中心</option>
+
+                                <option value="13">上海徐汇中心</option>
+
+                                <option value="14">上海浦东万国体育中心</option>
+
+                                <option value="17">西安雁塔中心</option>
+
+                                <option value="16">杭州钱江新城中心</option>
+
+                                <option value="18">杭州德胜中心</option>
+
+                                <option value="19">武汉武昌中心</option>
+
+                                <option value="20">成都高新中心</option>
+
+                            </select><strong>*</strong></li>
+                    </ul>
+                    <input type="submit" class="btn" value="" />
+                </form>
+            </div>
+
+            <script type="text/javascript" src="/js/banner.js"></script>
+        </div>
+
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    console.log("home");
+    window.onload = function () {
+        menu;
+
+    }
+</script>
+
+</body>
+</html>

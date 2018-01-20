@@ -8,4 +8,5 @@ function menu(){
         li[i].onmouseout=function(){
             this.className="";}
     }
-}
+};
+menu();

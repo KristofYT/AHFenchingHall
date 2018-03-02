@@ -15,6 +15,10 @@ public class User {
     @Column(name = "id")
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
     @Column(name = "email")
     @Email(message = "Please provide a valid email address")
     @NotEmpty(message = "Please provide an email address")

@@ -22,7 +22,7 @@ public class Hall {
     @NotEmpty(message = "Please provide your contact number")
     private String phone;
 
-    @OneToMany
+
     @JoinTable(name = "hall_city",joinColumns = @JoinColumn(name = "hall_id"),inverseJoinColumns = @JoinColumn(name = "city_id"))
     private int city;
 

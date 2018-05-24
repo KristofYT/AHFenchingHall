@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/course.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="course.html"><img src="../images/list06.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href="course.html" class="hover">公共课</a></li>
+            <li><a href="course_s.html">私教课</a></li>
+            <li><a href="course_itr.html">赛事介绍</a></li>
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3" style="line-height:22px;">
+            <div>&nbsp;</div>
+            <div><span style="font-size: 18px"><span style="font-family: 宋体">
+<p><span style="font-size: 15px"><span style="font-family: 宋体"><b>私教课的定义</b></span></span></p>
+<p><span style="font-size: 15px"><span style="font-family: 宋体">由教练与学员/会员进行一对一教学，主要针对学员/会员的技术动作、专项
+    力量以及实战比赛经验的提高，是学员/会员提高技战术能力的有效途径。私教课计划是指教练给学员/会员的训练计划。</span></span></p>
+<div><span style="font-size: 15px"><span style="font-family: 宋体">&nbsp;</span></span></div>
+<div><span style="font-size: 15px"><span style="font-family: 宋体"><b>私教课的分类</b></span></span></div>
+<div><span style="font-size: 15px"><span style="font-family: 宋体">私教课也分为技术课、实战课、体能课。</span></span></div>
+<div><span style="font-size: 15px"><span style="font-family: 宋体">1、&nbsp;技术课：主要目的是学习技术动作，并加以有目的的强化。</span></span></div>
+<div><span style="font-size: 15px"><span style="font-family: 宋体">2、&nbsp;实战课：主要目的是通过教练亲身与学员实战，引导学员充
+    分掌握实战技巧。</span></span></div>
+<div><span style="font-size: 15px"><span style="font-family: 宋体">3、&nbsp;体能课：主要目的是针对学员/会员不足的体能部分进行针对
+    性的强化训练。</span></span></div>
+&nbsp;</span></span></div>
+            <p>&nbsp;</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

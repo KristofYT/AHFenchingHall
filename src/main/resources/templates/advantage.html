@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/fencingworld.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="fencingworld.html"><img src="../images/list04.jpg"/></a></h2>
+        <script type="text/javascript" src="../js/leftnav.js"></script>
+
+        <ul class="leftul">
+            <li><a id="CC1_1" href="###" onclick="OpenClose1(1)" class="hover">击剑入门+</a>
+                <ul id="C1_1" style="">
+                    <script>oldOpen1 = 1</script>
+                    <li><a href="fencingworld.html">击剑起源发展</a></li>
+
+                    <li><a href="advantage.html" class="hover">击剑优势</a></li>
+
+                    <li><a href="introduction.html">剑种介绍</a></li>
+
+                    <li><a href="rule.html">比赛礼仪与规则</a></li>
+
+                </ul>
+            </li>
+
+
+            <li><a id="CC1_2" href="###" onclick="OpenClose1(2)">击剑讲堂+</a>
+                <ul id="C1_2" style="display:none;">
+
+                    <li><a href="fencing.html">击剑专用术语</a></li>
+
+                    <li><a href="power.html">击剑体能</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3">
+            <h2 class="right3h2" style="text-align: center">击剑优势</h2>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑是奥运会的骨灰级项目，迄今已经有500多岁，它是由古代决斗发展而来，
+                在中世纪的欧洲，击剑与骑马、游泳、打猎、下棋、吟诗、投枪一起被列为骑士的七种高尚运动。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑运动从诞生之日起直至今天，一直有旺盛的生命力：1896年在希腊雅典举行
+                的第一届现代奥运会就有了击剑这个项目。1959年意大利第一届世界大学生运动会上仅有的三个比赛项目，就包括击剑，其它两项是田径和游泳。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑是一项实用器械进行角逐的比赛，这使得不同身体条件的人能够处在一个水平
+                上参与竞争。参与者在训练和比赛中可以让自己的灵敏、协调能力得到锻炼；可以在实战中培养注意力、观察力、判断力；在对抗
+                中提高控制力、决断力；在胜负中塑造胜不骄败不馁的品质。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑还具有强烈的仪式感：雪白的剑服、锃亮的钢剑、优雅的动作，可以让参与者塑造
+                高贵气质。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">人们常说“智勇双全”，击剑的“智勇”体现在不同年龄，初学者和儿童首先体现的是
+                “勇”，此时在场上要敢打敢拼；到一定程度后需要“智”，通过观察判断挑引等手段组合战术刺中对手。所以击剑应该是从小开始练，
+                在不同年龄阶段会有不同的体会。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑的两个重要因素是爆发速度和协调，在训练中通过小肌肉群的训练增长肌肉爆发速度
+                ，每位选手通过击剑的专项训练均能让身体线条保持均匀。击剑动作的连贯和流畅则取决于手脚协调配合，各种跑跳协调性练习不但能
+                身体协调性还能帮助增长身高。</span></span></p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑不分年龄、身材所限，只要爱好都可参与。万国击剑为5岁至50岁不同年龄层提供了
+                不同的选择。无论是想把击剑</span></span><span style="font-size: 13px"><span style="font-family: 宋体">当做业余爱好，塑造自己还是想通过基
+                础训练走上专业道路的人，都可以来到这里体验击剑的精彩与魅力。</span></span></p>
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

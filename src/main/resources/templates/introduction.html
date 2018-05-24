@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/fencingworld.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="fencingworld.html"><img src="../images/list04.jpg"/></a></h2>
+        <script type="text/javascript" src="../js/leftnav.js"></script>
+
+        <ul class="leftul">
+            <li><a id="CC1_1" href="###" onclick="OpenClose1(1)" class="hover">击剑入门+</a>
+                <ul id="C1_1" style="">
+                    <script>oldOpen1 = 1</script>
+                    <li><a href="fencingworld.html">击剑起源发展</a></li>
+
+                    <li><a href="advantage.html" class="hover">击剑优势</a></li>
+
+                    <li><a href="introduction.html">剑种介绍</a></li>
+
+                    <li><a href="rule.html">比赛礼仪与规则</a></li>
+
+                </ul>
+            </li>
+
+
+            <li><a id="CC1_2" href="###" onclick="OpenClose1(2)">击剑讲堂+</a>
+                <ul id="C1_2" style="display:none;">
+
+                    <li><a href="fencing.html">击剑专用术语</a></li>
+
+                    <li><a href="power.html">击剑体能</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3">
+            <h2 class="right3h2" style="text-align: center">剑种介绍</h2>
+            <p><img alt="" align="left" width="218" height="90" src="../images/huajian.jpg"/>
+                &nbsp;&nbsp; 花 剑<br>
+                &nbsp;&nbsp; 由剑柄、剑身和护手盘组成。全长不超过110厘米,重量不超过500克。剑 &nbsp;&nbsp;&nbsp;身为钢制,横截面为长方形。</br><br>
+                &nbsp;&nbsp; 花剑主要以刺为主,有效部位是躯干,有裁判的优先权。</br><br>
+                &nbsp;</br></p>
+            <p>&nbsp;</p>
+            <p><img alt="" align="left" width="218" height="90" src="../images/zhongjian.jpg"/>
+            &nbsp;&nbsp; 重 剑<br>
+                &nbsp;&nbsp; 由剑柄、剑身和护手盘组成。全长不超过110厘米,重量不超过750克。剑 &nbsp;&nbsp;&nbsp;身为钢制,横截面为三棱形。</br><br>
+                &nbsp;&nbsp; 重剑主要刺为主,有效部位是全身,由于没有裁判优先权，刺中就得分。</br><br>
+                &nbsp;</br></p>
+            <p>&nbsp;</p>
+            <p><img alt="" align="left" width="218" height="90" src="../images/peijian.jpg"/></p>
+            <p>&nbsp;&nbsp;&nbsp;佩 剑<br>
+                &nbsp;&nbsp; 由剑柄、剑身和护手盘组成。全长不超过105厘米,重量不超过500克。剑 &nbsp;&nbsp;&nbsp;身为钢制,有刃与背,横截面为牙形。</br><br>
+                &nbsp;&nbsp; 佩剑主要以劈（刺）为主,有效部位是上身,有裁判优先权。</br><br>
+                &nbsp;</br></p>
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

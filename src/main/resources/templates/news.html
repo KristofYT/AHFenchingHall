@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="main_left">
+        <h2><a href="news.html"><img src="../images/list02.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href="notice.html" class="hover">艾晖公告</a> </li>
+            <li><a href="news.html">业内新闻</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

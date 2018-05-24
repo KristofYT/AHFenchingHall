@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/course.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="course.html"><img src="../images/list06.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href="course.html" class="hover">公共课</a></li>
+            <li><a href="course_s.html">私教课</a></li>
+            <li><a href="course_itr.html">赛事介绍</a></li>
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3" style="line-height:22px;">
+            <p>&nbsp;</p>
+            <p><span style="color: #000000"><span style="font-size: 18px"><span style="font-family: 隶书"><span
+                    style="font-family: 隶书">公共课程是根据学员击剑程度的不同提供给的各个级别的学员集体参加的课程。训练课程细分为三种
+                课程：技术课程、体能课程和实战课程。课程长度：90分钟/节。</span></span></span></span><font color="#595757" size="3"> </font></p>
+            <p>&nbsp;</p>
+            <p><span style="color: #000000"><span style="font-size: 18px"><span
+                    style="font-family: 隶书"><b>课程内容如下：</b></span></span></span></p>
+            <p>&nbsp;</p>
+            <div><span style="color: #000000"><span style="font-size: 18px"><span style="font-family: 隶书">技术课：主要是教
+                授学员学习基本的击剑技术动作，并通过一些教练指导、双人练习等手段加以熟练。</span></span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div><span style="color: #000000"><span style="font-size: 18px"><span style="font-family: 隶书">体能课：分为基础
+                体能和专项体能，这两项会同时在体能课中进行训练，主要是训练学员的基础力量、协调性、灵活性，还有专项所需要的小肌肉力量。</span></span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div><span style="color: #000000"><span style="font-size: 18px"><span style="font-family: 隶书">实战课：包括条件
+                实战和计分实战，条件实战是通过设定不同的条件，来达到训练学员在实战中运用技术的能力；计分实战是训练学员对比赛的比分感觉，
+                技术战术的分配运用。</span></span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+    <div class="top"><img src="../images/about.jpg"/></div>
+    <div class="main_left">
+        <h2><a href="about.html"><img src="../images/list01.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href='about.html' class='hover'>艾晖介绍</a></li>
+            <li><a href='culture.html' class='hover'>企业文化</a></li>
+        </ul>
+    </div>
+    <div class="main_right">
+        <div class="right_1">
+            <p><b><span style="font-family: 宋体; font-size: 9pt">我们的使命: </span></b></p>
+            <div align="left"><span style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">铸剑育人，承载未来</span></div>
+            <div align="left">&nbsp;</div>
+            <div align="left"><b><span style="font-family: 宋体; font-size: 9pt">我们的愿景:</span></b></div>
+            <div align="left"><span style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">成为全国击剑培训行业的领跑者 </span></div>
+            <div align="left"><span style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">成为大众认可的击剑品牌IP</span></div>
+            <div align="left">&nbsp;</div>
+            <div align="left"><b><span style="font-family: 宋体; font-size: 9pt">我们的价值观:&nbsp;</span></b></div>
+            <div align="left"><span style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">敬业 </span></div>
+            <div style="text-align: left; text-indent: 27pt; margin: 0cm 0cm 0pt -4.3pt" align="left"><span
+                    style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">热爱自己的企业, 热爱从事的职业,积极进取，接受挑战.</span></div>
+            <div style="text-align: left; text-indent: 27pt; margin: 0cm 0cm 0pt -4.3pt" align="left"><span
+                    style="font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="font-family: 宋体; font-size: 9pt">全心投入, 执着进取, 勇于担当 </span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: -18pt" align="left">&nbsp;</div>
+            <div style="text-align: left; line-height: 150%" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">专业</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: 22.5pt" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">持续学习，自我完善，做专业领域的专家。</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: 22.5pt" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">精益求精,注重流程与内容的持续改进, 不断提升专业品质</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: -18pt" align="left">&nbsp;</div>
+            <div style="text-align: left; line-height: 150%" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">客户为本&nbsp;</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: 22.5pt" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">始终微笑面对客户</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: 22.5pt" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">关爱客户, 提供最高效的服务和问题的解决</span></div>
+            <div style="text-align: left; line-height: 150%; text-indent: 22.5pt" align="left"><span
+                    style="line-height: 150%; font-family: Wingdings; font-size: 9pt">n </span><span
+                    style="line-height: 150%; font-family: 宋体; font-size: 9pt">不断提供超出期望的客户体验</span></div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

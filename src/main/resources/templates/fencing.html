@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/fencingworld.jpg"/></div>
+
+    <div class="main_left">
+
+        <h2><a href="fencingworld.html"><img src="../images/list04.jpg"/></a></h2>
+        <script type="text/javascript" src="../js/leftnav.js"></script>
+
+        <ul class="leftul">
+            <li><a id="CC1_1" href="###" onclick="OpenClose1(1)" class="hover">击剑入门+</a>
+                <ul id="C1_1" style="">
+                    <script>oldOpen1 =1</script>
+                    <li><a href="fencingworld.html">击剑起源发展</a></li>
+
+                    <li><a href="advantage.html" class="hover">击剑优势</a></li>
+
+                    <li><a href="introduction.html">剑种介绍</a></li>
+
+                    <li><a href="rule.html">比赛礼仪与规则</a></li>
+
+                </ul>
+            </li>
+
+
+            <li><a id="CC1_2" href="###" onclick="OpenClose1(2)">击剑讲堂+</a>
+                <ul id="C1_2" style="display:none;">
+                    <script>oldOpen1 =1</script>
+                    <li><a href="fencing.html">击剑专用术语</a></li>
+
+                    <li><a href="power.html">击剑体能</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main_right">
+
+        <div class="right_3">
+            <ul class="photo_words">
+                <p>&nbsp;</p>
+                <li><img src="../images/f_class/yybw.jpg" alt="有效部位 "/><strong>有效部位</strong>
+                    <p>有效部位，击剑运动术语。按规则规定允许刺击的身体部位。反之无效部位。不同剑种的有效部位不同。
+                    </p><span>2017/12/09</span></li>
+
+                <li><img src="../images/f_class/htfs.jpg " alt="后退防守 "/><strong> 后退防守 </strong>
+                    <p>
+                        后退防守距离；后退防守可分为距离防守和武器防守；距离防守是通过距离拉开对方的攻击；武器防守是通过剑格挡对方的剑的攻击。这两种防守都需要通过最初的防守距离来实施。最初的防守距离应掌握在单一弓步能快速击… </p>
+                    <span>2017/12/09 </span></li>
+
+
+                <li><img src="../images/f_class/jdjg.jpg" alt="击打进攻 "/><strong> 击打进攻 </strong>
+                    <p>
+                        击打进攻；利用剑尖击打对手的武器，破坏对方武器的威胁，同时也给自己创造加速进攻的机会；击打进攻的时候，
+                        需要注意的是我们的击打部位</p>
+                    <span>2017/12/09 </span></li>
+
+                <li><img src="../images/f_class/chc.jpg " alt="冲刺 "/><strong>冲刺 </strong>
+                    <p>指手臂前伸，用剑尖威胁对方的有效部位，随之身体前倾，中心前移，后脚蹬地向前成交叉步冲击，常用于重剑的远距离进攻。
+                    </p><span>2017/12/09</span></li>
+
+
+                <li><img src="../images/f_class/cjs.jpg " alt="非持剑手 "/><strong>非持剑手</strong>
+                    <p>非持剑手，指比赛中运动员用一只手持剑而另一只手称为“非持剑手”。它只能用来平衡身体而不能配合持剑手做进攻和防御动作。
+                    </p><span>2017/12/09</span></li>
+
+                <li><img src="../images/f_class/jg.jpg " alt="剑感 "/><strong>剑感 </strong>
+                    <p>
+                        剑感，指击剑运动员对剑在运用中的综合知觉。具有良好的剑感，能在不同姿势和不同距离的情况下，根据思维活动有效地控制剑尖，
+                        以最快速度，最近路线，最有利的时机击中对方，并能控制对方剑的可能行动以及在双方剑… </p>
+                    <span>2017/12/09</span></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

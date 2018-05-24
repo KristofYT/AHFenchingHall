@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/course.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="course.html"><img src="../images/list06.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href="course.html" class="hover">公共课</a></li>
+            <li><a href="course_s.html">私教课</a></li>
+            <li><a href="course_itr.html">赛事介绍</a></li>
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3" style="line-height:22px;">
+            <div>&nbsp;</div>
+            <p><span style="color: #000000">艾晖击剑每年有两站比赛，分别为重庆市击剑公开是（5月）、重庆市击剑邀请赛（11月），同时艾晖
+                击剑会随时关注国内外击剑比赛，并做相应的推荐，而且还会带队参加相关比赛。<br>&nbsp;</br></span></p>
+            <p><span style="color: #000000">艾晖所有的比赛比赛根据年龄分组，每个组别取前八名分别颁发奖牌和证书。
+                每站比赛从第一名到前三十二名均有积分，总决赛结束后总积分前三名将给予奖励。所有标准均执行国际化标准，注重
+                公平、公正、公开，做到相对公平。<br>&nbsp;</br></span></p>
+            <p><span style="color: #000000">凡艾晖有效会籍学员均可参加所有比赛。初学者训练到二十节课以上也可参加比赛。
+                比赛的目的有：其一，让学员充分了解击剑比赛的赛制和规则；其二，锻炼孩子的心理素质，比如胜负锻炼孩子的心理承受能力，
+                激烈的对抗锻炼孩子的抗压能力；其三，通过场上瞬息万变的时机和比分变化锻炼孩子独立思考与应变能力；
+                其四，实战作为提高自己技术水平最好的平台，艾晖击剑积极鼓励孩子们去参加各种国内外的赛事。</span></p>
+            <p><span style="color: #000000"><br>&nbsp;</br></span></p>
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

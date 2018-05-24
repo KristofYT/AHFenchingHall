@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="main_left" style="padding-left:10px;">
+        <h2><a href="manage.html"><img src="../images/coach_team.jpg"/></a></h2>
+        <ul class="leftul">
+            <li><a href="manage.html" class="hover">管理团队</a></li>
+            <li><a href="coach.html">明星教练</a></li>
+
+        </ul>
+        <div class="coach">
+            <p>艾晖击剑拥有国内一流的击剑教练团队，他们热爱所从事的事业，
+                并在每天的教学中享受着作为一名击剑教练带给他们的快乐</p>
+        </div>
+    </div>
+
+    <div class="main_right">
+        <div class="right_2">
+            <ul class="photo_words">
+                <li><img src="/images/ManagementAndCoach/xh.jpg " alt="谢  晖 "/><strong>谢  晖</strong>
+                    <p><strong>国家健将级运动员，副教授。</strong>艾晖击剑俱乐部技术总教练！
+                        2006年广东队退役后来到重庆理工大学担任击剑专职教师和学校击剑队主教练，曾参加三届全国运动会；
+                        1999、2002、2004年三夺全国击剑锦标赛团体冠军；
+                        2007-2017年率领重庆理工大学击剑队在全国赛场屡创佳绩，把理工大学击剑队打造成一支在
+                        全国大学生击剑界的一流强队，连续11年共获得全国大学生击剑锦标赛金牌16枚。
+                    </p><span>2018/1/18 </span></li>
+                <li><img src="/images/ManagementAndCoach/wzd.jpg " alt="王正大"/><strong>王正大</strong>
+                    <p><strong>重庆击剑奠基人，国家高级教练，原重庆市击剑队总教练。</strong>艾晖击剑俱乐部高级技术顾问。
+                        培养出一大批优秀的击剑运动员，对重庆击剑运动的发展立下了不可磨灭的功勋。
+                    </p><span>2018/1/18 </span></li>
+                <li><img src="/images/ManagementAndCoach/wr.jpg " alt="王 锐"/><strong>王  锐</strong>
+                    <p><strong>艾晖击剑俱乐部运营总监。</strong>艾晖击剑俱乐部的创始人
+                        10年运营管理经验，工商管理硕士（MBA），正是在他的牵头下，艾晖击剑俱乐部于2014年正式成立。
+                    </p><span>2018/1/18 </span></li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

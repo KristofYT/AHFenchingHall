@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/fencingworld.jpg"/></div>
+
+    <div class="main_left">
+        <h2><a href="fencingworld.html"><img src="../images/list04.jpg"/></a></h2>
+        <script type="text/javascript" src="../js/leftnav.js"></script>
+
+        <ul class="leftul">
+            <li><a id="CC1_1" href="###" onclick="OpenClose1(1)" class="hover">击剑入门+</a>
+                <ul id="C1_1" style="">
+                    <script>oldOpen1 = 2</script>
+                    <li><a href="fencingworld.html">击剑起源发展</a></li>
+
+                    <li><a href="advantage.html" class="hover">击剑优势</a></li>
+
+                    <li><a href="introduction.html">剑种介绍</a></li>
+
+                    <li><a href="rule.html">比赛礼仪与规则</a></li>
+
+                </ul>
+            </li>
+
+
+            <li><a id="CC1_2" href="###" onclick="OpenClose1(2)">击剑讲堂+</a>
+                <ul id="C1_2" style="display:none;">
+                    <script>oldOpen1 = 2</script>
+                    <li><a href="fencing.html">击剑专用术语</a></li>
+
+                    <li><a href="power.html">击剑体能</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_3">
+            <h2 class="right3h2" style="text-align: center" >击剑起源发展</h2>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑：一项运动、一种技能、一门科学更是一门艺术和一种教育方式。不论我们把它当做艺术来欣赏，还是当做科学来研究，还是把它看做运动的教育方式，抑或是当做技能来修炼，我们都能从中收获财富。透过击剑我们透析千年历史、钻研庞杂的技术技能、感受对成就的赞美、领悟先辈力量的传承。</span></span>
+            </p>
+            <p>&nbsp;</p>
+            <p><span style="font-size: 13px"><span style="font-family: 宋体">击剑运动是一项历史悠久的传统体育运动项目。早在远古时代，剑就是人类为了生存同野兽进行搏斗和猎食所使用的工具。随着人类历史的发展，剑由最初的石制、骨制发展到青铜制、铁制……，其功能也从最初的工具演变为战争的兵器，逐步走上历史舞台，又伴随着火器时代的到来，而渐渐从战争历史中谢幕。印刷术的普及让文明得以传承，而击剑文化也藉此发扬、改进。</span></span>
+            </p>
+            <p>&nbsp;</p>
+            <div><span style="font-size: 13px"><span style="font-family: 宋体">击剑在古希腊、埃及、中国、罗马、阿拉伯等国家十分盛行。让我们跨越年代，在历史长河中寻找击剑的第一道轨迹。我们很多人都知道，击剑在1896年被列入第一届奥运会，但很多人忽视了，它也包括在公元前776年的第一届古代奥运会的项目中。公元前11世纪，古希腊就出现了击剑课，并有剑师讲课。有关古老的击剑形式，在希腊、埃及等国家中的一些历史建筑和纪念碑上都可见到关于击剑的浮雕。 </span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div><span style="font-size: 13px"><span style="font-family: 宋体">在中世纪的欧洲，出现了令人炫目的骑士阶层，击剑与骑马、游泳、打猎、下棋、吟诗、投枪是骑士的七种高尚技艺。他们以精湛的剑术纵横天下，以高尚情操博得了广泛的美誉。此后各国贵族纷纷效仿，一时间成为上流社会的时尚，以致于发展到贵族之间解决纠纷，动辄拔剑相向，一剑定生死。为了研究和推动击剑技术的发展，欧洲各国纷纷成立击剑行会（协会和学校）。 西班牙被认为是现代击剑运动的摇篮，第一本击剑书籍就由两位西班牙剑师编著，很快他们的论著便得到了认可，并传入意大利和法国。</span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div><span style="font-size: 13px"><span style="font-family: 宋体">击剑运动在法国查理九世到路易十四这五代君王治理的150年间得到全面的发展。1776年，法国剑师发明了面罩，这一发明使击剑运动进一步走上了高雅道路。人们戴上面罩、手套，穿上击剑服，就可以安全地进行一连串的攻防交锋。面罩的问世是击剑运动发展的一个里程碑。法国也成为当时欧洲击剑运动的发展中心。</span></span>
+            </div>
+            <div>&nbsp;</div>
+            <div align="left"><span style="font-size: 13px"><span style="font-family: 宋体">与此同时，决斗之风盛行欧洲。他们使用的三棱形剑，便是今天重剑的雏形。在这种形势下，为了满足人们对击剑的爱好和需要，又不至于伤害生命，一种剑身较短并呈四棱形，剑尖用皮革包扎的新型剑被设计出来，受到人们的普遍欢迎，并得到广泛开展，这便是现在花剑的雏形。从此，在欧洲的习武厅、击剑厅及专业学校里，花剑的击剑方式逐渐形成并日趋完善。热衷于决斗的绅士和贵族从1885年开始，在习武厅进行练习时，使用的三棱形剑也做出了以上改进，交锋不限制部位，就此，重剑也正式以竞技形式出现 。</span></span>
+            </div>
+            <div align="left">&nbsp;</div>
+            <div align="left"><span style="font-size: 13px"><span style="font-family: 宋体">18世纪末，匈牙利人对东方波斯人、阿拉伯人及土耳其人早期骑兵用的弯型短刀，进行了改革，于剑柄上装配了一个象弯月形的护手盘，在击剑时可以起到保护手指的作用。后来，意大利击剑人将它进一步改进，使它能在击剑运动和决斗中使用，并根据骑兵作战的特点，规定有效部位为腰带以上，这便成为现代佩剑的前身。至此，人们在从事击剑时就可以自由地选择花剑、重剑和佩剑。</span></span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

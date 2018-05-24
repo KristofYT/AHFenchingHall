@@ -5,21 +5,75 @@
 <body class="no-skin">
 <div th:replace="fragments/frame :: header"></div>
 
-<div class="coach_main">
+<div id="main-container" class="main-container">
+
+    <div class="main_left" style="padding-left:10px;">
+        <h2><a href="manage.html"><img src="../images/coach_team.jpg"/></a></h2>
+        <ul class="left_ul">
+            <li><a href="manage.html" class="hover">管理团队</a></li>
+            <li><a href="coach.html">明星教练</a></li>
+
+        </ul>
+        <div class="coach">
+            <p>艾晖击剑拥有国内一流的击剑教练团队，他们热爱所从事的事业，并在每天的教学中享受着作为一名击剑教练带给他们的快乐</p>
+        </div>
+    </div>
+
+    <div class="main_right">
+        <div class="right_2">
+            <ul class="coach">
+                <li><img src="/images/coach_star/zyf.jpg " alt="张芸菲"/><strong>张芸菲&nbsp;&nbsp;&nbsp;艾晖击剑俱乐部恒大中广场店总教练</strong>
+                    <p> <br>曾连续三年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，团体金牌一次。</br>
+                        <br>国家大众C级击剑教练员，国家大众B级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+                <li><img src="/images/coach_star/mty.jpg " alt="毛天彦"/><strong>毛天彦&nbsp;&nbsp;&nbsp;艾晖击剑俱乐部万盛馆总教练</strong>
+                    <p> <br>曾连续两年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，团体金牌一次。</br>
+                        <br>国家大众C级击剑教练员，国家大众B级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+                <li><img src="/images/coach_star/zht.jpg " alt="邹洪添"/><strong>邹洪添&nbsp;&nbsp;&nbsp;艾晖击剑俱乐部金源店总教练</strong>
+                    <p> <br>曾连续两年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，团体金牌一次。</br>
+                        <br>国家大众C级击剑教练员，国家大众C级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+                <li><img src="/images/coach_star/dy.jpg " alt="杜玥"/><strong>杜玥&nbsp;&nbsp;&nbsp;重庆市西南大学附属中学击剑队主教练</strong>
+                    <p> <br>曾连续三年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，个人银牌一次，团体金牌一次</br>
+                        <br>国家大众C级击剑教练员，国家大众B级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+                <li><img src="/images/coach_star/lc.jpg " alt="李晨"/><strong>李晨&nbsp;&nbsp;&nbsp;重庆市南开中学击剑队主教练</strong>
+                    <p> <br>曾连续两年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，个人铜牌一次，团体银牌一次。</br>
+                        <br>国家大众C级击剑教练员，国家大众B级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+                <li><img src="/images/coach_star/xsn.jpg " alt="徐盛楠"/><strong>徐盛楠&nbsp;&nbsp;&nbsp;重庆市巴蜀常春藤击剑队主教练</strong>
+                    <p> <br>曾连续两年参加全国大学生击剑锦标赛.</br>
+                        <br>获得个人金牌一次，团体金牌一次。</br>
+                        <br>国家一级运动员，国家大众C级击剑教练员，国家大众C级击剑裁判员。</br>
+                    </p><span>2018/1/26 </span></li>
+
+            </ul>
+        </div>
+    </div>
+
 
 
 </div>
-
-
-
-
-
 
 
 <div th:replace="fragments/footer :: footer"></div>
 
 <th:block th:replace="fragments/script :: script"></th:block>
 <script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
 </script>
 
 </body>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/bgframe :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/bgframe :: header"></div>
+
+<div id="main-container" class="main-container">
+    <div>
+        <h1>
+            Appointment
+        </h1>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#" th:utext="#{home}"></a>
+                    </li>
+
+                    <li>
+                        <a href="#" th:utext="#{appointment.am}"></a>
+                    </li>
+                </ul><!-- /.breadcrumb -->
+
+
+            </div>
+
+
+            <div class="page-content">
+
+                <div class="page-header">
+                    <h1>
+                        <font th:utext="#{fenchinghall}"></font>
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                            <font th:utext="#{appointment.am}"></font>
+                        </small>
+                        <a class="inline pull-right" href="#">
+                            <i class="ace-icon fa fa-plus-circle purple"></i></a>
+                    </h1>
+                </div><!-- /.page-header -->
+
+                <fieldset>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <!-- PAGE CONTENT BEGINS
+                                <div th:if="${successMessage}!=null" class="alert alert-success">
+                                    <button class="close" data-dismiss="alert">
+                                        <i class="ace-icon fa fa-times"></i>
+                                    </button>
+
+                                    <i class="ace-icon fa fa-hand-o-right"></i>
+                                    <span th:utext="${successMessage}"></span>
+                                </div>
+                                -->
+
+
+                                <div class="clearfix">
+                                    <div class="pull-right tableTools-container"></div>
+                                </div>
+                                <div class="table-header" th:utext="#{appointment.appointmentList}">
+                                </div>
+
+                                <!-- div.table-responsive -->
+
+                                <!-- div.dataTables_borderWrap -->
+                                <div>
+                                    <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th th:utext="#{appointment.id}"></th>
+                                            <th th:utext="#{appointment.name}"></th>
+                                            <th th:utext="#{appointment.phone}"></th>
+                                            <th th:utext="#{appointment.age}"></th>
+                                            <th th:utext="#{appointment.hall}"></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody >
+                                        <tr th:each="allAppointments : ${allAppointments}">
+                                            <td th:text="${allAppointments.id}"></td>
+                                            <td th:text="${allAppointments.name}"></td>
+                                            <td th:text="${allAppointments.phone}"></td>
+
+                                            <td th:text="${allAppointments.age.getAge()}"></td>
+                                            <td th:text="${allAppointments.hall.getHallName()}"></td>
+                                            <td>
+                                                <div class="hidden-sm hidden-xs action-buttons">
+                                                    <a th:href="@{'/editAppointment'(id=${allAppointments.id})}">
+                                                        <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                    </a>
+
+                                                    <a class="red" th:href="@{'/deleteAppointment'(id=${allAppointments.id})}">
+                                                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                    </a>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                </fieldset>
+            </div><!-- /.page-content -->
+
+        </div>
+    </div><!-- /.main-content -->
+
+
+</div>
+
+<div th:replace="fragments/bgfooter :: footer"></div>
+
+<th:block th:replace="fragments/bgscript :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

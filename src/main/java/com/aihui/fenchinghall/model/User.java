@@ -1,5 +1,6 @@
 package com.aihui.fenchinghall.model;
 
+import com.google.gson.annotations.Expose;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -15,10 +16,16 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
+
+
     @Column(name = "email")
     @Email(message = "Please provide a valid email address")
     @NotEmpty(message = "Please provide an email address")
     private String email;
+
+    @Expose
+    @Column(name = "active")
+    private int active;
 
     @Column(name = "first_name")
     @NotEmpty(message = "Please provide your firstName")
@@ -36,9 +43,14 @@ public class User {
     @Length(min = 5, message = "Your password must have at least 5 characters")
     private String password;
 
+    @Expose
     @ManyToOne
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @JoinColumn(name = "role_id")
     private Role role;
+
+//    @ManyToOne
+//    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+//    private Role role;
 
     public int getId() {
         return id;

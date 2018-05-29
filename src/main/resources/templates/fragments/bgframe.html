@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title th:utext="#{fenchinghall}"></title>
+
+    <meta name="description" content="Fenching Hall"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <!-- fenching hall -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/stylebg.css" />
+    <!--  bg -->
+    <link rel="stylesheet" href="/css/ace.min.css"/>
+    <link rel="stylesheet" href="/css/ace-ie.min.css"/>
+    <link rel="stylesheet" href="/css/ace-part2.min.css"/>
+    <link rel="stylesheet" href="/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="/css/ace.min.css"/>
+</head>
+<body>
+
+<div id="header" class="header" th:fragment="header">
+    <div class="header-left">
+        <a href="../home.html"><img class="logo " src="/images/logo.jpg" /></a>
+    </div>
+
+    <div class="header-right">
+        <div class="header-right-top">
+            <div class="cTel">后台管理</div>
+        </div>
+        <ul >
+            <li style="background:none;">
+                <a  href="bgappointment.html">预约列表</a>
+            </li>
+            <li style="background:none;">
+                <a  href="bggonggao.html">公告管理</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

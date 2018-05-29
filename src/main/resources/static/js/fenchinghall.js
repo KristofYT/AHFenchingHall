@@ -10,3 +10,4 @@ function menu(){
     }
 };
 menu();
+//window.onload=menu();

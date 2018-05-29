@@ -151,11 +151,10 @@ a#nav7:hover{background-position:left -54px;}
 
 div.img
 {
-    margin-left: 30px;
-
+    margin-left: 40px;
     border:1px solid #bebebe;
-    height:auto;
-    width:auto;
+    height:460px;
+    width:200px;
     float:left;
     text-align:center;
 }
@@ -164,18 +163,48 @@ div.img img
     display:inline;
     width: 200px;
     height: 288px;
-    margin:3px;
+    margin: 0px auto;
     border:1px solid #bebebe;
 }
+
 div.img a:hover img
 {
     border:1px solid #333333;
 }
-div.desc
+div.img desc
 {
     text-align:center;
     font-weight:normal;
-    width:200px;
+    width:202px;
     font-size:12px;
+    margin:10px 5px 10px 5px;
+}
+
+div.time
+{
+    margin:1px;
+    border:1px solid #bebebe;
+    height:232px;
+    width:181px;
+    float:left;
+    text-align:center;
+}
+div.time img
+{
+    display:inline;
+    margin:1px;
+    border:1px solid #bebebe;
+}
+div.time a:hover img
+{
+    border:1px solid #333333;
+}
+
+div.time desc
+{
+    text-align:center;
+    font-weight:normal;
+    width:150px;
+    font-size:8px;
     margin:10px 5px 10px 5px;
 }

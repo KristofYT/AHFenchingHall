@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/bgframe :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/bgframe :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <!--<div class="top"><img src="../images/course.jpg"/></div>-->
+
+    <div>
+    <h1>后台管理首页</h1></div>
+
+</div>
+
+<div th:replace="fragments/bgfooter :: footer"></div>
+
+<th:block th:replace="fragments/bgscript :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

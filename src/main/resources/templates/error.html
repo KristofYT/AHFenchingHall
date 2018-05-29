@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frame :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/frame :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="top"><img src="../images/course.jpg"/></div>
+
+    <div>
+        <h1>Your， URL Not Found</h1>
+        <h1>没有此页，请出入正确的url</h1>
+        <h1>a  a  a </h1>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

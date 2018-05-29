@@ -14,7 +14,7 @@ public class PageController {
     @RequestMapping(value = "/*",method = RequestMethod.GET)
     public ModelAndView home(HttpSession httpSession){
         ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("home");
+        modelAndView.setViewName("error");
         return modelAndView;
     }
 

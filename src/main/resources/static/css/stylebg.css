@@ -1,0 +1,72 @@
+/**
+ * Customized style sheet for LG
+ * Created by YangTao on 2017-11-29.
+ */
+
+.btn.btn-bold, .btn.btn-round {
+    border-bottom-width: 1px;
+}
+
+.sidebar .sidebar-toggle:before,
+.sidebar.menu-min .sidebar-toggle:before {
+    left: 0px;
+    right: 0px;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-container {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .navbar:not(.navbar-collapse) .ace-nav {
+        display: block;
+        float: none !important;
+        text-align: left;
+        border: none;
+        letter-spacing: -3px;
+    }
+
+    .navbar:not(.navbar-collapse) .ace-nav > li:first-child,
+    .navbar:not(.navbar-collapse) .ace-nav > li:last-child {
+        border: none;
+    }
+
+    .navbar:not(.navbar-collapse) .ace-nav > li {
+        display: block;
+    }
+}
+
+.navbar .navbar-toggle.pull-left {
+    margin: 5px 5px 5px 5px;
+}
+
+.no-skin .navbar .navbar-toggle {
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    margin: 0;
+    border: none;
+}
+
+.dropdown-menu.lg {
+    margin: 0;
+    width: 100%;
+    min-width: auto
+}
+
+.dropdown-menu.lg > li > a {
+    font-size: 14px
+}
+
+.no-skin .nav-list>li .submenu>li.active:not(.open)>a {
+    background-color: #F1F5F9;
+}
+
+.no-skin .nav-list>li .submenu>li.active>a {
+    color: #2B7DBC;
+    font-weight: bold;
+}

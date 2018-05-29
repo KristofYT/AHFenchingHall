@@ -64,33 +64,33 @@
                     <div class="card-header text-lg-center">
                         预约免费体验
                     </div>
-                    <form class="card-body">
+                    <form class="card-body"  id="form_post" >
                         <div class="form-group">
-                            <input type="name" class="form-control" id="appointmentName" placeholder="姓名"/>
+                            <input name="name" class="form-control" id="appointmentName" placeholder="姓名"/>
                         </div>
                         <div class="form-group">
-                            <input type="photo" class="form-control" id="appointmentPhoto" placeholder="联系电话"/>
+                            <input name="phone" class="form-control" id="appointmentPhoto" placeholder="联系电话"/>
                         </div>
                         <div class="form-group">
-                            <select class="custom-select  " id="appointmentAge">
-                                <option value="5-6岁">5-6岁</option>
-                                <option value="6-7岁">6-7岁</option>
-                                <option value="7-8岁">7-8岁</option>
-                                <option value="8-9岁">8-9岁</option>
-                                <option value="9-10岁">9-10岁</option>
-                                <option value="10-16岁">10-16岁</option>
-                                <option value="成人">成人</option>
+                            <select name="age" class="custom-select  " id="appointmentAge">
+                                <option value="1">5-6岁</option>
+                                <option value="2">6-7岁</option>
+                                <option value="3">7-8岁</option>
+                                <option value="4">8-9岁</option>
+                                <option value="5">9-10岁</option>
+                                <option value="6">10-16岁</option>
+                                <option value="7">成人</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <select class="custom-select  " id="appointmentHall">
+                            <select  name="hall" class="custom-select  " id="appointmentHall">
                                 <option value="1">重庆渝中</option>
                                 <option value="2">重庆金源</option>
                                 <option value="3">重庆理工</option>
                                 <option value="3">重庆万盛</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">立即提交</button>
+                        <button  onclick="postAppointment()" class="btn btn-primary btn-block">立即提交</button>
                     </form>
                     <div class="card-footer text-muted">
                         咨询热线 17723665375
@@ -116,6 +116,28 @@
     window.onload = function () {
         menu();
     }
+    function postAppointment(){//1,bind,  2,unbind
+        console.log("postAppointment = " + $('#form_post').serialize());
+        $.ajax({
+            type: "post",
+            url: "/appointment",
+            data: $('#form_post').serialize(),
+            dataType: 'text',
+            success: function (data) {
+                // alert(" " + " 提交成功，请等候教练电话与你确认 ");
+                console.log("success data " + data);
+            },
+            error: function (xhr, type, errorThrown) {
+                console.log(" xhr = "+JSON.stringify(xhr).toString() + "   type = " +type.toString()+ "  errorThrown ="+errorThrown.toString());
+                // alert(errorThrown.toString() + "     提交失败，请重新输入姓名和联系电话");
+            }
+        });
+        alert(" " + " 提交成功，请等候教练电话与你确认 ");
+    }
+
+
+
+
 </script>
 
 </body>

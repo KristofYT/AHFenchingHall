@@ -11,4 +11,7 @@ public class City {
     @Column(name = "city_id")
     private int id;
 
+    @Column(name = "city_name")
+    private String city_name;
+
 }

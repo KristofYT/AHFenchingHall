@@ -66,10 +66,10 @@
                     </div>
                     <form class="card-body"  id="form_post" >
                         <div class="form-group">
-                            <input name="name" class="form-control" id="appointmentName" placeholder="姓名"/>
+                            <input name="name" type="text" class="form-control" id="appointmentName" placeholder="请输入您的姓名"/>
                         </div>
                         <div class="form-group">
-                            <input name="phone" class="form-control" id="appointmentPhoto" placeholder="联系电话"/>
+                            <input  type="tel" name="phone" class="form-control" id="appointmentPhone" placeholder="请输入您的联系电话"/>
                         </div>
                         <div class="form-group">
                             <select name="age" class="custom-select  " id="appointmentAge">
@@ -87,7 +87,7 @@
                                 <option value="1">重庆渝中</option>
                                 <option value="2">重庆金源</option>
                                 <option value="3">重庆理工</option>
-                                <option value="3">重庆万盛</option>
+                                <option value="4">重庆万盛</option>
                             </select>
                         </div>
                         <button  onclick="postAppointment()" class="btn btn-primary btn-block">立即提交</button>
@@ -98,7 +98,6 @@
                 </div>
             </div>
 
-            <script type="text/javascript" src="/js/banner.js"></script>
         </div>
 
     </div>
@@ -109,15 +108,42 @@
 
 <th:block th:replace="fragments/script :: script"></th:block>
 <script type="text/javascript" th:inline="javascript">
-    console.log("aaa");
+
+    console.log("menu load!");
     $('.carousel').carousel({
         interval: 3000
     });
     window.onload = function () {
         menu();
     }
-    function postAppointment(){//1,bind,  2,unbind
+
+
+    // 提交预约，ajax异步刷新
+    function postAppointment(){
         console.log("postAppointment = " + $('#form_post').serialize());
+
+        // // 判断是否登录
+        // if(document.getElementById('session').value==null)
+        // {
+        //     alert('请先登陆后再提交预约！');
+        //     return false;
+        // }
+
+        //判断输入是否为空
+        if ( document.getElementById('appointmentName').value=="")
+        {
+            alert('请输入您的名字！');
+            return false;
+        }
+
+        // 判断输入的电话号码是否正确
+        var phone=document.getElementById('appointmentPhone').value;
+        if(!(/^1[34578]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填！");
+            return false;
+        }
+
+
         $.ajax({
             type: "post",
             url: "/appointment",
@@ -134,9 +160,6 @@
         });
         alert(" " + " 提交成功，请等候教练电话与你确认 ");
     }
-
-
-
 
 </script>
 

@@ -1,19 +1,4 @@
-.light-login {
-	background-color: #253247;
-}
 
-.main-content {
-	position: relative;
-	margin-top: 10%;
-}
-
-.login-form-header {
-	font-family: ArialMT;
-	font-size: 24px;
-	color: #36C6D3;
-	letter-spacing: 0;
-	text-align: center
-}
 
 input[type="text"], input[type="password"] {
 	background: #DDE3EC;
@@ -24,3 +9,54 @@ input[type="text"], input[type="password"] {
 	border:0;
 }
 
+
+.login{
+	display: table;
+	margin-top : 15%;
+	position: center;
+}
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+.login_left{
+	vertical-align: middle;
+	padding-right: 20px;
+	height: 350px;
+	width: 350px;
+}
+.login_right{
+	margin-left: 100px;
+	background: #fefefe;
+	border: 1px solid #d5dce5;
+	border-radius: 5px;
+	height: 350px;
+	width: 350px;
+}
+
+
+
+.login li{
+	padding: 0px 0 0 170px;
+	height: 200px;
+	line-height: 20px;
+	position: relative;
+	color: #606060;
+}
+.login li img{
+	width: 145px;
+	height: 195px;
+	border: 1px solid #d7d7d7;
+	padding:2px;
+	position: absolute;
+	left:80px;
+	top: 0px;
+}
+
+.login li p {
+	margin-left:110px;
+}

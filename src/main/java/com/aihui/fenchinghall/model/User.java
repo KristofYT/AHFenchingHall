@@ -27,13 +27,11 @@ public class User {
     @Column(name = "active")
     private int active;
 
-    @Column(name = "first_name")
-    @NotEmpty(message = "Please provide your firstName")
-    private String firstName;
+    @Column(name = "name")
+    @NotEmpty(message = "Please provide your name")
+    private String name;
 
-    @Column(name = "last_name")
-    @NotEmpty(message = "Please provide your last firstName")
-    private String lastName;
+
 
     @Column(name = "phone")
     @NotEmpty(message = "Please provide your contact number")
@@ -69,19 +67,11 @@ public class User {
     }
 
     public String getFirstName() {
-        return firstName;
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {

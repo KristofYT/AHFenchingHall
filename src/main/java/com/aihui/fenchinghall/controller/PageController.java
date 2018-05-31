@@ -12,9 +12,16 @@ import javax.servlet.http.HttpSession;
 public class PageController {
 
     @RequestMapping(value = "/*",method = RequestMethod.GET)
-    public ModelAndView home(HttpSession httpSession){
+    public ModelAndView error(HttpSession httpSession){
         ModelAndView modelAndView= new ModelAndView();
         modelAndView.setViewName("error");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/home",method = RequestMethod.GET)
+    public ModelAndView home(HttpSession httpSession){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("home");
         return modelAndView;
     }
 
@@ -136,6 +143,16 @@ public class PageController {
         modelAndView.setViewName("news");
         return modelAndView;
     }
+
+
+    @RequestMapping(value = "/register",method = RequestMethod.GET)
+    public ModelAndView register(HttpSession httpSession){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("register");
+        return modelAndView;
+    }
+
+
 
 
 }

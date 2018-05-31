@@ -33,16 +33,37 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery(userQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
                 .dataSource(dataSource)
-                ;
+        ;
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/registration").permitAll()
-                .antMatchers("/login").permitAll()
 //                .antMatchers("/*").permitAll()
-                .antMatchers("/").permitAll()
+
+//                .antMatchers("/appointment").permitAll()
+                .antMatchers("/home").permitAll()
+                .antMatchers("/about").permitAll()
+                .antMatchers("/advantage").permitAll()
+                .antMatchers("/coach").permitAll()
+                .antMatchers("/culture").permitAll()
+                .antMatchers("/fencing").permitAll()
+                .antMatchers("/fencingworld").permitAll()
+                .antMatchers("/introduction").permitAll()
+                .antMatchers("/manage").permitAll()
+                .antMatchers("/member").permitAll()
+                .antMatchers("/member_time").permitAll()
+                .antMatchers("/news").permitAll()
+                .antMatchers("/notice").permitAll()
+                .antMatchers("/power").permitAll()
+                .antMatchers("/rule").permitAll()
+                .antMatchers("/course").permitAll()
+                .antMatchers("/course_itr").permitAll()
+                .antMatchers("/course_s").permitAll()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/register").permitAll()
+
+//                .antMatchers("/").permitAll()
                 .anyRequest()
                 .authenticated().and().csrf().disable()
                 .formLogin()
@@ -60,7 +81,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/h5plus/**", "/test/**", "/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/font-awesome/**", "/logos/**","/banners/**");
+                .antMatchers("/h5plus/**", "/test/**", "/resources/**",
+                        "/static/**", "/css/**", "/js/**", "/images/**", "/font-awesome/**", "/logos/**", "/banners/**");
     }
 
 }

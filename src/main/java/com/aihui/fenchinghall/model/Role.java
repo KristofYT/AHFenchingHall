@@ -10,13 +10,13 @@ public class Role {
 
     @Id
     @Column(name = "role_id")
-    private int id;
+    public int id;
 
     @Column(name = "role_name")
-    private String roleName;
+    public String roleName;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
-    private Set<User> user;
+    public Set<User> user;
 
     public int getId() {
         return id;

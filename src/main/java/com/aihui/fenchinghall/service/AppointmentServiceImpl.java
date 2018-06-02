@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("appointmentService")
-public class AppointmentServiceImpl implements AppointmentService
-{
+public class AppointmentServiceImpl implements AppointmentService {
+
     @Autowired
     private AppointmentRepository appointmentRepository;
 
@@ -33,4 +33,11 @@ public class AppointmentServiceImpl implements AppointmentService
     public List<Appointment> findAllAppointments() {
         return appointmentRepository.findAll();
     }
+
+    @Override
+    public void updateAppointment(Appointment appointment) {
+        appointmentRepository.save(appointment);
+    }
+
+
 }

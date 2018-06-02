@@ -13,20 +13,20 @@ public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hall_id")
-    private int id;
+    public int id;
 
     @NotEmpty(message = "Please provide a hall name")
     @Column(name = "hall_name")
-    private  String hallName;
+    public  String hallName;
 
     @Column(name = "phone")
     @NotEmpty(message = "Please provide your contact number")
-    private String phone;
+    public String phone;
 
     @Expose
     @ManyToOne
     @JoinColumn(name = "city_id")
-    private City city;
+    public City city;
 
     public int getId() {
         return id;

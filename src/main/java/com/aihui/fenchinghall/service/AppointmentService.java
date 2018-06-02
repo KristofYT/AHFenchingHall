@@ -13,7 +13,7 @@ public interface AppointmentService {
 
     public void deleteAppointmentById(String id);
 
-
+    public void updateAppointment(Appointment appointment);
 
     public void saveAppointment(Appointment appointment);
 

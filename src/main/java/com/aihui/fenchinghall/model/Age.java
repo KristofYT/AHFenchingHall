@@ -9,10 +9,10 @@ public class Age {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "age_id")
-    private int id;
+    public int id;
 
     @Column(name = "age")
-    private String age;
+    public String age;
 
     public int getId() {
         return id;

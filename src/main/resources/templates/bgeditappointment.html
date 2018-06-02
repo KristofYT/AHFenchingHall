@@ -22,7 +22,7 @@
                     </li>
 
                     <li>
-                        <a href="#" th:utext="#{appointment}"></a>
+                        <a href="#" th:utext="#{appointment.am}"></a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -54,7 +54,7 @@
                             <br/>
                             <div class="widget-body">
                                 <div class="widget-main no-padding">
-                                    <form autocomplete="off" action="#" th:action="@{/editAppointment}"
+                                    <form autocomplete="off" action="#" th:action="@{/bgeditappointment}"
                                           th:object="${appointment}" method="post" class="form-horizontal"
                                           role="form">
                                         <div class="form-group">
@@ -66,10 +66,10 @@
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('lastName')}" th:errors="*{name}" style="color:#D16E6C" class="help-inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:#D16E6C" class="help-inline"></label></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.phone}"></label>
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{appointment.phone}"></label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -79,37 +79,40 @@
                                             </div>
                                             <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="validation-message inline"></label></div>
                                         </div>
+
+
                                         <div class="form-group">
                                             <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{appointment.age}"></label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<select class="chosen-select form-control" th:field="*{age}" id="role" data-placeholder="Choose a Role...">
+																		<select class="chosen-select form-control" th:field="*{age}" id="age" data-placeholder="Choose a age...">
 
-																		<option th:each="r : ${ages}" th:value="${{a}}" th:text="${a.get}"></option>
+																		<option th:each="a : ${ages}" th:value="${{a}}" th:text="${a.age}"></option>
 																		</select>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="validation-message inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="validation-message inline"></label></div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.organization}"></label>
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{appointment.hall}"></label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<select class="chosen-select form-control" th:field="*{organization}" data-placeholder="Choose a Organization...">
+																		<select class="chosen-select form-control" th:field="*{hall}" id="hall" data-placeholder="Choose a Role...">
 
-																		<option th:each="r : ${organizations}" th:value="${{r}}" th:text="${r.organizationName}"></option>
+																		<option th:each="h : ${halls}" th:value="${{h}}" th:text="${h.hallName}"></option>
 																		</select>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('organization')}" th:errors="*{organization}" class="validation-message inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('hall')}" th:errors="*{hall}" class="validation-message inline"></label></div>
                                         </div>
 
                                         <div class="form-actions center">
-                                            <a href="/users" data-target="#forgot-box" class="forgot-password-link">
+                                            <a href="/bgappointment" data-target="#forgot-box" class="forgot-password-link">
                                                 <i class="ace-icon fa fa-arrow-left"></i>
                                                 <font th:utext="#{back}"></font>
                                             </a>

@@ -14,37 +14,37 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private int id;
+    public int id;
 
 
 
     @Column(name = "email")
     @Email(message = "Please provide a valid email address")
     @NotEmpty(message = "Please provide an email address")
-    private String email;
+    public String email;
 
     @Expose
     @Column(name = "active")
-    private int active;
+    public int active;
 
     @Column(name = "name")
     @NotEmpty(message = "Please provide your name")
-    private String name;
+    public String name;
 
 
 
     @Column(name = "phone")
     @NotEmpty(message = "Please provide your contact number")
-    private String phone;
+    public String phone;
 
     @Column(name = "password")
     @Length(min = 5, message = "Your password must have at least 5 characters")
-    private String password;
+    public String password;
 
     @Expose
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;
+    public Role role;
 
 //    @ManyToOne
 //    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))

@@ -9,9 +9,9 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "city_id")
-    private int id;
+    public int id;
 
     @Column(name = "city_name")
-    private String city_name;
+    public String city_name;
 
 }

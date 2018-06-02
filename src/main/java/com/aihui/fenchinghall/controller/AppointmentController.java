@@ -8,11 +8,13 @@ import com.aihui.fenchinghall.service.AgeService;
 import com.aihui.fenchinghall.service.AppointmentService;
 import com.aihui.fenchinghall.service.HallService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.List;
 
 @ResponseBody
@@ -59,17 +61,43 @@ public class AppointmentController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/editAppointment", method = RequestMethod.GET)
+    @RequestMapping(value = "/bgeditappointment", method = RequestMethod.GET)
     public ModelAndView editAppointment(WebRequest request) {
         ModelAndView modelAndView = new ModelAndView();
         String id = request.getParameter("id");
         Appointment appointment = appointmentService.findAppointmentById(id);
+        List<Age> ageList =  ageService.findAllAges();
+        List<Hall> hallList =  hallService.findAllHalls();
+        modelAndView.addObject("ages", ageList);
+        modelAndView.addObject("halls", hallList);
         modelAndView.addObject("appointment", appointment);
-        modelAndView.setViewName("bgeditAppointment");
+        modelAndView.setViewName("bgeditappointment");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/deleteAppointment", method = RequestMethod.GET)
+    @PostMapping(value = "/bgeditappointment")
+    public ModelAndView postEditAppointment(@Valid Appointment appointment, BindingResult bindingResult) {
+        System.out.println(" editAppointment POST ");
+        ModelAndView modelAndView = new ModelAndView();
+        List<Age> ageList =  ageService.findAllAges();
+        List<Hall> hallList =  hallService.findAllHalls();
+        modelAndView.addObject("ages", ageList);
+        modelAndView.addObject("halls", hallList);
+
+        appointment = appointmentService.findAppointmentById(String.valueOf(appointment.id));
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("editUser");
+        } else {
+            appointmentService.updateAppointment(appointment);
+            modelAndView.addObject("successMessage", "User has been updated successfully");
+            List<Appointment> allAppointments =  appointmentService.findAllAppointments();
+            modelAndView.addObject("allAppointments", allAppointments);
+            modelAndView.setViewName("bgappointment");
+        }
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/bgdeleteAppointment", method = RequestMethod.GET)
     public ModelAndView deleteAppointment(WebRequest request) {
         ModelAndView modelAndView = new ModelAndView();
         String id = request.getParameter("id");

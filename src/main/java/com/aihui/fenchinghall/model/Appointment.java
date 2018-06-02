@@ -13,26 +13,26 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "appointment_id")
-    private int id;
+    public int id;
 
 
     @Column(name = "name")
     @NotEmpty(message = "Please provide your name")
-    private String name;
+    public String name;
 
     @Column(name = "phone")
     @NotEmpty(message = "Please provide your contact number")
-    private String phone;
+    public String phone;
 
     @Expose
     @ManyToOne
     @JoinColumn(name = "age_id")
-    private Age age;
+    public Age age;
 
     @Expose
     @ManyToOne
     @JoinColumn(name = "hall_id")
-    private Hall hall;
+    public Hall hall;
 
     public int getId() {
         return id;

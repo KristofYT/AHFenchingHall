@@ -96,11 +96,11 @@
                                             <td th:text="${allAppointments.hall.getHallName()}"></td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs action-buttons">
-                                                    <a th:href="@{'/editAppointment'(id=${allAppointments.id})}">
+                                                    <a th:href="@{'/bgeditappointment'(id=${allAppointments.id})}">
                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                     </a>
 
-                                                    <a class="red" th:href="@{'/deleteAppointment'(id=${allAppointments.id})}">
+                                                    <a class="red" th:href="@{'/bgdeleteAppointment'(id=${allAppointments.id})}">
                                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                     </a>
                                                 </div>

@@ -16,4 +16,7 @@ public interface UserService {
 
     public String validate(String username, String password);
 
+    void updateUser(User user);
+
+    List<User> findUserByRoleId(int id);
 }

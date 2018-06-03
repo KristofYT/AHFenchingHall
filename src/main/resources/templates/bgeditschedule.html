@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/bgframe :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/bgframe :: header"></div>
+
+<div id="main-container" class="main-container">
+    <div>
+        <h1>
+            Appointment
+        </h1>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#" th:utext="#{home}"></a>
+                    </li>
+
+                    <li>
+                        <a href="#" th:utext="#{schedule.am}"></a>
+                    </li>
+                </ul><!-- /.breadcrumb -->
+
+
+            </div>
+
+
+            <div class="page-content">
+
+                <div class="page-header">
+                    <h1>
+                        <font th:utext="#{fenchinghall}"></font>
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                            <font th:utext="#{schedule.am}"></font>
+                        </small>
+                        <a class="inline pull-right" href="#">
+                            <i class="ace-icon fa fa-plus-circle purple"></i></a>
+                    </h1>
+                </div><!-- /.page-header -->
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h4 class="widget-title" th:utext="#{schedule.edit}"></h4>
+                            </div>
+                            <br/>
+                            <div class="widget-body">
+                                <div class="widget-main no-padding">
+                                    <form autocomplete="off" action="#" th:action="@{/bgeditschedule}"
+                                          th:object="${schedule}" method="post" class="form-horizontal"
+                                          role="form">
+                                        <div class="form-group" style="display: none ">
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{id}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.name}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+                                                                        <label type="text" th:field="*{user.name}" />
+																	</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.year}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<label type="text" th:field="*{year}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('year')}" th:errors="*{year}" style="color:#D16E6C" class="help-inline"></label></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.week}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<label type="text" th:field="*{week}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('week')}" th:errors="*{week}" style="color:#D16E6C" class="help-inline"></label></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.satmor}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{satmor}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('satmor')}" th:errors="*{satmor}" class="validation-message inline"></label></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.sataft}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{sataft}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('sataft')}" th:errors="*{sataft}" class="validation-message inline"></label></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.satnig}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{satnig}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('satnig')}" th:errors="*{satnig}" class="validation-message inline"></label></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.sunmor}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{sunmor}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('sunmor')}" th:errors="*{sunmor}" class="validation-message inline"></label></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.sunaft}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{sunaft}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('sunaft')}" th:errors="*{sunaft}" class="validation-message inline"></label></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{schedule.sunnig}"></label>
+
+                                            <div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" th:field="*{sunnig}" placeholder="" class="width-100" />
+                                                                        <!--i class="ace-icon fa fa-times-circle red"></i-->
+																	</span>
+                                            </div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('sunnig')}" th:errors="*{sunnig}" class="validation-message inline"></label></div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="form-actions center">
+                                            <a href="/bgappointment" data-target="#forgot-box" class="forgot-password-link">
+                                                <i class="ace-icon fa fa-arrow-left"></i>
+                                                <font th:utext="#{back}"></font>
+                                            </a>
+                                            <button type="submit" class="btn btn-sm btn-success">
+                                                <font th:utext="#{submit}"></font>
+                                                <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div><!-- /.page-content -->
+
+        </div>
+    </div><!-- /.main-content -->
+
+
+</div>
+
+<div th:replace="fragments/bgfooter :: footer"></div>
+
+<th:block th:replace="fragments/bgscript :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+</script>
+
+</body>
+</html>

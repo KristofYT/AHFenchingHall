@@ -19,7 +19,6 @@ public class User {
 
 
     @Column(name = "email")
-    @Email(message = "Please provide a valid email address")
     @NotEmpty(message = "Please provide an email address")
     public String email;
 
@@ -37,8 +36,24 @@ public class User {
     @NotEmpty(message = "Please provide your contact number")
     public String phone;
 
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Column(name = "password")
-    @Length(min = 5, message = "Your password must have at least 5 characters")
+    @Length(min = 1, message = "Your password must have at least 5 characters")
     public String password;
 
     @Expose
@@ -66,13 +81,6 @@ public class User {
         this.email = email;
     }
 
-    public String getFirstName() {
-        return name;
-    }
-
-    public void setFirstName(String name) {
-        this.name = name;
-    }
 
     public String getPhone() {
         return phone;

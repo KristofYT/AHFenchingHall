@@ -18,6 +18,13 @@ public class PageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public ModelAndView tohome(HttpSession httpSession){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("home");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/home",method = RequestMethod.GET)
     public ModelAndView home(HttpSession httpSession){
         ModelAndView modelAndView= new ModelAndView();

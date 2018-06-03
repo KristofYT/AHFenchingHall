@@ -84,16 +84,12 @@ public class AppointmentController {
         modelAndView.addObject("ages", ageList);
         modelAndView.addObject("halls", hallList);
 
-        appointment = appointmentService.findAppointmentById(String.valueOf(appointment.id));
-        if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("editUser");
-        } else {
-            appointmentService.updateAppointment(appointment);
-            modelAndView.addObject("successMessage", "User has been updated successfully");
-            List<Appointment> allAppointments =  appointmentService.findAllAppointments();
-            modelAndView.addObject("allAppointments", allAppointments);
-            modelAndView.setViewName("bgappointment");
-        }
+//        appointment = appointmentService.findAppointmentById(String.valueOf(appointment.id));
+        appointmentService.updateAppointment(appointment);
+        modelAndView.addObject("successMessage", "User has been updated successfully");
+        List<Appointment> allAppointments =  appointmentService.findAllAppointments();
+        modelAndView.addObject("allAppointments", allAppointments);
+        modelAndView.setViewName("bgappointment");
         return modelAndView;
     }
 

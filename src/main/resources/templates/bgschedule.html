@@ -22,7 +22,7 @@
                     </li>
 
                     <li>
-                        <a href="#" th:utext="#{appointment.am}"></a>
+                        <a href="#" th:utext="#{schedule.am}"></a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -34,10 +34,10 @@
 
                 <div class="page-header">
                     <h1>
-                        <font th:utext="#{fenchinghall}"></font>
+                        <font th:utext="#{schedule.am}"></font>
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            <font th:utext="#{appointment.am}"></font>
+                            <font th:utext="#{schedule.am}"></font>
                         </small>
                         <a class="inline pull-right" href="#">
                             <i class="ace-icon fa fa-plus-circle purple"></i></a>
@@ -65,7 +65,7 @@
                                 <div class="clearfix">
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
-                                <div class="table-header" th:utext="#{appointment.appointmentList}">
+                                <div class="table-header" th:utext="#{schedule.list}">
                                 </div>
 
                                 <!-- div.table-responsive -->
@@ -75,32 +75,42 @@
                                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th th:utext="#{appointment.id}"></th>
-                                            <th th:utext="#{appointment.name}"></th>
-                                            <th th:utext="#{appointment.phone}"></th>
-                                            <th th:utext="#{appointment.age}"></th>
-                                            <th th:utext="#{appointment.hall}"></th>
+                                            <th th:utext="#{schedule.id}"></th>
+                                            <th th:utext="#{schedule.name}"></th>
+                                            <th th:utext="#{schedule.year}"></th>
+                                            <th th:utext="#{schedule.week}"></th>
+                                            <th th:utext="#{schedule.satmor}"></th>
+                                            <th th:utext="#{schedule.sataft}"></th>
+                                            <th th:utext="#{schedule.satnig}"></th>
+                                            <th th:utext="#{schedule.sunmor}"></th>
+                                            <th th:utext="#{schedule.sunaft}"></th>
+                                            <th th:utext="#{schedule.sunnig}"></th>
                                             <th></th>
                                         </tr>
                                         </thead>
 
                                         <tbody >
-                                        <tr th:each="allAppointments : ${allAppointments}">
-                                            <td th:text="${allAppointments.id}"></td>
-                                            <td th:text="${allAppointments.name}"></td>
-                                            <td th:text="${allAppointments.phone}"></td>
+                                        <tr th:each="schedules : ${schedules}">
+                                            <td th:text="${schedules.id}"></td>
+                                            <td th:text="${schedules.user.name}"></td>
+                                            <td th:text="${schedules.year}"></td>
+                                            <td th:text="${schedules.week}"></td>
+                                            <td th:text="${schedules.satmor}"></td>
+                                            <td th:text="${schedules.sataft}"></td>
+                                            <td th:text="${schedules.satnig}"></td>
+                                            <td th:text="${schedules.sunmor}"></td>
+                                            <td th:text="${schedules.sunaft}"></td>
+                                            <td th:text="${schedules.sunnig}"></td>
 
-                                            <td th:text="${allAppointments.age.getAge()}"></td>
-                                            <td th:text="${allAppointments.hall.getHallName()}"></td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs action-buttons">
-                                                    <a th:href="@{'/bgeditappointment'(id=${allAppointments.id})}">
+                                                    <a th:href="@{'/bgeditschedule'(id=${schedules.id})}">
                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                     </a>
 
-                                                    <a class="red" th:href="@{'/bgdeleteAppointment'(id=${allAppointments.id})}">
-                                                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                                    </a>
+                                                    <!--<a class="red" th:href="@{'/bgdeleteschedules'(id=${schedules.id})}">-->
+                                                        <!--<i class="ace-icon fa fa-trash-o bigger-130"></i>-->
+                                                    <!--</a>-->
                                                 </div>
 
                                             </td>

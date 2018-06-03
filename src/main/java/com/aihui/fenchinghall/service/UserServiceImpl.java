@@ -35,6 +35,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
     public String validate(String username, String password) {
         User user = findUserByEmail(username);
         if( user != null){
@@ -43,5 +48,10 @@ public class UserServiceImpl implements UserService {
             }
         }
         return "0";
+    }
+
+    @Override
+    public List<User> findUserByRoleId(int id) {
+        return userRepository.findUserByRoleId(id);
     }
 }

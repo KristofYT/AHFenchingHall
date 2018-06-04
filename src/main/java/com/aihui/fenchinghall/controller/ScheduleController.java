@@ -19,7 +19,6 @@ import java.util.List;
 
 import static com.aihui.fenchinghall.util.ScheduleUtil.getTodayIsWeekInYesr;
 
-@ResponseBody
 @RestController
 public class ScheduleController {
 
@@ -89,7 +88,8 @@ public class ScheduleController {
         ModelAndView modelAndView = new ModelAndView();
         String id = request.getParameter("id");
         Schedule schedule = scheduleService.findScheduleById(id);
-
+        List<User> users =  userService.findAllUsers();
+        modelAndView.addObject("users", users);
         modelAndView.addObject("schedule", schedule);
         modelAndView.setViewName("bgeditschedule");
         return modelAndView;

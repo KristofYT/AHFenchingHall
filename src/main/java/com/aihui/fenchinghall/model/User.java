@@ -36,21 +36,7 @@ public class User {
     @NotEmpty(message = "Please provide your contact number")
     public String phone;
 
-    public int getActive() {
-        return active;
-    }
 
-    public void setActive(int active) {
-        this.active = active;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Column(name = "password")
     @Length(min = 1, message = "Your password must have at least 5 characters")
@@ -81,6 +67,21 @@ public class User {
         this.email = email;
     }
 
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getPhone() {
         return phone;
@@ -105,5 +106,7 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+
 
 }

@@ -137,19 +137,7 @@ public class PageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/notice",method = RequestMethod.GET)
-    public ModelAndView notice(HttpSession httpSession){
-        ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("notice");
-        return modelAndView;
-    }
 
-    @RequestMapping(value = "/news",method = RequestMethod.GET)
-    public ModelAndView news(HttpSession httpSession){
-        ModelAndView modelAndView= new ModelAndView();
-        modelAndView.setViewName("news");
-        return modelAndView;
-    }
 
 
     @RequestMapping(value = "/register",method = RequestMethod.GET)

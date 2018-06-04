@@ -10,9 +10,20 @@
     <div class="main_left">
         <h2><a href="news"><img src="../images/list02.jpg"/></a></h2>
         <ul class="leftul">
-            <li><a href="notice" class="hover">艾晖公告</a> </li>
-            <li><a href="news">业内新闻</a></li>
+            <li><a href="notice" >艾晖公告</a> </li>
+            <li><a href="news" class="hover">业内新闻</a></li>
         </ul>
+    </div>
+
+    <div class="main_right">
+        <div class="right_2">
+            <div class="title">业内新闻</div>
+
+            <div th:if="${newsMeg}!=null" class="">
+
+                <span class="text-center" th:utext="${newsMeg}"></span>
+            </div>
+        </div>
     </div>
 
 

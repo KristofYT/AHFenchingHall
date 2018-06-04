@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/bgframe :: head"></head>
+
+<body class="no-skin">
+<div th:replace="fragments/bgframe :: header"></div>
+
+<div id="main-container" class="main-container">
+
+    <div class="fl col-5 " style="margin: 10px" >
+        <div class="title">编辑艾晖公告</div>
+        <div class="edit-div">
+            <form id="form_notice">
+                <textarea  id="notice" name="ntcontent" class="edit-input" th:text="${bgnoticeMeg}"   maxlength="2000" autocomplete="off"></textarea>
+            </form>
+            <button onclick="saveNotice()" class="fr btn-primary">保存</button>
+        </div>
+
+    </div>
+    <div class="fr col-5 " style="margin: 10px" >
+        <div class="title">编辑业内新闻</div>
+        <div class="edit-div">
+            <form id="form_news">
+                <textarea  id="news" name="newscontent" class="edit-input" th:text="${bgnewsMeg}"  maxlength="2000" autocomplete="off"></textarea>
+            </form>
+        </div>
+        <button onclick="saveNews()" class="fr btn-primary">保存</button>
+    </div>
+
+</div>
+
+<div th:replace="fragments/bgfooter :: footer"></div>
+
+<th:block th:replace="fragments/bgscript :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+    function saveNotice(){
+        console.log("saveNotice = " + $('#form_notice').serialize());
+        $.ajax({
+            type: "post",
+            url: "/bgnotice",
+            data: $('#form_notice').serialize(),
+            dataType: 'text',
+            success: function (data) {
+                console.log("saveNotice success data " + data);
+            },
+            error: function (xhr, type, errorThrown) {
+                console.log(" xhr = "+JSON.stringify(xhr).toString() + "   type = " +type.toString()+ "  errorThrown ="+errorThrown.toString());
+            }
+        });
+        alert(" saveNotice " + "   ");
+        window.hrefwindow.location.href="bgnotice";
+    }
+    function saveNews(){
+        console.log("saveNews = " + $('#form_news').serialize());
+        $.ajax({
+            type: "post",
+            url: "/bgnews",
+            data: $('#form_news').serialize(),
+            dataType: 'text',
+            success: function (data) {
+                console.log("saveNews success data " + data);
+            },
+            error: function (xhr, type, errorThrown) {
+                console.log(" xhr = "+JSON.stringify(xhr).toString() + "   type = " +type.toString()+ "  errorThrown ="+errorThrown.toString());
+            }
+        });
+        alert(" saveNews " + "   ");
+        window.hrefwindow.location.href="bgnotice";
+    }
+</script>
+
+</body>
+</html>

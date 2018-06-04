@@ -1,0 +1,16 @@
+.edit-div{
+    margin: 20px;
+    height: 400px;
+    width: 400px;
+    overflow: auto;
+}
+
+.edit-input{
+    padding: 10px;
+    height: 350px;
+    width: 350px;
+    overflow: auto;
+}
+
+.fl{ float: left}
+.fr{ float: right}

@@ -70,3 +70,16 @@
     color: #2B7DBC;
     font-weight: bold;
 }
+
+
+.bghomeul{
+    display: block;
+    overflow: hidden;
+    white-space:nowrap;
+}
+.bghomeul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 15px;
+    width: 130px;
+}

@@ -62,7 +62,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/course_s").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/bgeditappointment").permitAll()
+                .antMatchers("/appointment").permitAll()
+//
+
+//                .antMatchers("/register").permitAll()
+//                .antMatchers("/bgeditappointment").permitAll()
+                .antMatchers("/bgeditappointment").hasAuthority("admin")
+                .antMatchers("/bghome").hasAuthority("admin")
+                .antMatchers("/bguser").hasAuthority("admin")
+                .antMatchers("/uploadtime").hasAuthority("coach")
+//                .antMatchers("/bgschedule").hasAuthority("admin")
                 .anyRequest()
                 .authenticated().and().csrf().disable()
                 .formLogin()
@@ -72,7 +81,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .passwordParameter("password")
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").and().exceptionHandling()
+                .logoutSuccessUrl("/home").and().exceptionHandling()
                 .accessDeniedPage("/deny");
     }
 
@@ -83,5 +92,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h5plus/**", "/test/**", "/resources/**",
                         "/static/**", "/css/**", "/js/**", "/images/**", "/font-awesome/**", "/logos/**", "/banners/**");
     }
+
+
+//    @RequestMapping(value="/qufen")
+//    public String qufen(){
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        if(auth.getAuthorities().toString().equals("[user]"))
+//            return "index";//如果是客户登录
+//        else
+//            return "htshouye";//如果是后台管理人员登录
+//    }
+//    public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+//    {
+//        Assert.notNull(request, "HttpServletRequest required");
+//        if (this.invalidateHttpSession) {
+//            HttpSession session = request.getSession(false);
+//            if (session != null) {
+//                session.invalidate(); //使当前会话失效
+//            }
+//        }
+//
+//        SecurityContextHolder.clearContext(); //清空安全上下文
+//    }
 
 }

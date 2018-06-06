@@ -22,6 +22,8 @@ public interface ScheduleService {
 
     public List<Schedule> findAllSchedules();
 
+    public List<Schedule> findSchedule();
+
     List<Schedule> findScheduleByWeek(int week);
 
     List<Schedule> findByWeek(int week);

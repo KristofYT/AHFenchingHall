@@ -7,6 +7,7 @@ import com.aihui.fenchinghall.service.ScheduleService;
 import com.aihui.fenchinghall.service.UserService;
 import com.aihui.fenchinghall.util.ConvertDateTest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
@@ -36,7 +37,8 @@ public class ScheduleController {
     @RequestMapping(value = "/bgschedule",method = RequestMethod.GET)
     public ModelAndView bgSchedule(HttpSession httpSession){
         ModelAndView modelAndView= new ModelAndView();
-
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User curreUser = userService.findUserByEmail(email);
         String  week = getTodayIsWeekInYesr();
         LocalDate localDate = LocalDate.now();
         String yesr = String.valueOf(localDate.getYear());
@@ -75,7 +77,11 @@ public class ScheduleController {
 
 //        List<Schedule> schedules =  scheduleService.findAllSchedules();
 //        List<User> users =  userService.findAllUsers();
-        schedules =  scheduleService.findAllSchedules();
+        if(curreUser.role.id==2){
+            schedules = scheduleService.findScheduleByUserId(String.valueOf(curreUser.id));
+        }else {
+            schedules =  scheduleService.findAllSchedules();
+        }
         users =  userService.findAllUsers();
         modelAndView.addObject("users", users);
         modelAndView.addObject("schedules", schedules);
@@ -97,20 +103,45 @@ public class ScheduleController {
 
     @PostMapping(value = "/bgeditschedule")
     public ModelAndView postEditSchedule(@Valid Schedule schedule, BindingResult bindingResult) {
-        System.out.println(" editAppointment POST ");
+//        System.out.println(" editAppointment POST ");
         ModelAndView modelAndView = new ModelAndView();
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User currentUser=userService.findUserByEmail(email);
         List<User> users =  userService.findAllUsers();
         modelAndView.addObject("users", users);
-
+        if(currentUser.role.id==2){
+            scheduleService.saveSchedule(schedule);
+            modelAndView.addObject("schedule", schedule);
+            modelAndView.setViewName("bgcoacheditschedule");
+//            modelAndView.addObject("successMessage", "schedule has been updated successfully");
+//            List<Schedule> schedules=scheduleService.findScheduleById(String.valueOf(currentUser.id));
+//           scheduleService.findScheduleByUserId(String.valueOf(currentUser.id));
+        }else {
+            scheduleService.updateSchedule(schedule);
+            modelAndView.addObject("successMessage", "schedule has been updated successfully");
+            List<Schedule> schedules =  scheduleService.findAllSchedules();
+            modelAndView.addObject("schedules", schedules);
+            modelAndView.setViewName("bgschedule");
+        }
 //        appointment = appointmentService.findAppointmentById(String.valueOf(appointment.id));
-        scheduleService.updateSchedule(schedule);
-        modelAndView.addObject("successMessage", "schedule has been updated successfully");
-        List<Schedule> schedules =  scheduleService.findAllSchedules();
-        modelAndView.addObject("schedules", schedules);
-        modelAndView.setViewName("bgschedule");
+
         return modelAndView;
     }
 
-
+//    @GetMapping(value = "/uploadtime")
+//    public ModelAndView uploadtime(@Valid Schedule schedule, BindingResult bindingResult) {
+//        System.out.println(" uploadtime POST ");
+//        ModelAndView modelAndView = new ModelAndView();
+//        List<User> users =  userService.findUserByRoleId(id);
+//        modelAndView.addObject("users", users);
+//
+////        appointment = appointmentService.findAppointmentById(String.valueOf(appointment.id));
+//        scheduleService.updateSchedule(schedule);
+//        modelAndView.addObject("successMessage", "schedule has been updated successfully");
+//        List<Schedule> schedules =  scheduleService.findAllSchedules();
+//        modelAndView.addObject("schedules", schedules);
+//        modelAndView.setViewName("bgschedule");
+//        return modelAndView;
+//    }
 
 }

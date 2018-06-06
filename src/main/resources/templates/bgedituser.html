@@ -8,7 +8,7 @@
 <div id="main-container" class="main-container">
     <div>
         <h1>
-            Appointment
+            编辑用户信息
         </h1>
     </div>
 
@@ -18,11 +18,11 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="#" th:utext="#{home}"></a>
+                        <a href="#" >首页</a>
                     </li>
 
                     <li>
-                        <a href="#" th:utext="#{user.us}"></a>
+                        <a href="#">用户</a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -34,10 +34,10 @@
 
                 <div class="page-header">
                     <h1>
-                        <font th:utext="#{fenchinghall}"></font>
+                        <font >艾晖击剑</font>
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            <font th:utext="#{user.us}"></font>
+                            <font >用户</font>
                         </small>
                         <a class="inline pull-right" href="#">
                             <i class="ace-icon fa fa-plus-circle purple"></i></a>
@@ -49,7 +49,7 @@
                     <div class="col-sm-12">
                         <div class="widget-box">
                             <div class="widget-header">
-                                <h4 class="widget-title" th:utext="#{user.edit}"></h4>
+                                <h4 class="widget-title" >编辑</h4>
                             </div>
                             <br/>
                             <div class="widget-body">
@@ -58,82 +58,113 @@
                                           th:object="${user}" method="post" class="form-horizontal"
                                           role="form">
                                         <div class="form-group" style="display: none ">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.id}"></label>
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                   th:utext="#{user.id}"></label>
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{id}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{id}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
                                         </div>
                                         <div class="form-group" style="display: none ">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.id}"></label>
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                   th:utext="#{user.id}"></label>
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{active}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{active}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group" style="display: none ">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.id}"></label>
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                   th:utext="#{user.id}"></label>
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{email}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{email}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.name}"></label>
-
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                  >姓名</label>
+                                            <!--th:utext="#{user.name}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{name}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{name}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:#D16E6C" class="help-inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label
+                                                    th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                                                    style="color:#D16E6C" class="help-inline"></label></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.password}"></label>
-
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                   >密码</label>
+                                            <!--th:utext="#{user.password}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{password}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{password}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="validation-message inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label
+                                                    th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                                    class="validation-message inline"></label></div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{user.phone}"></label>
-
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                   >电话</label>
+                                            <!--th:utext="#{user.phone}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<input type="text" th:field="*{phone}" placeholder="" class="width-100" />
+																		<input type="text" th:field="*{phone}"
+                                                                               placeholder="" class="width-100"/>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="validation-message inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label
+                                                    th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                                                    class="validation-message inline"></label></div>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right" th:utext="#{appointment.age}"></label>
-
+                                            <label for="inputError2"
+                                                   class="col-xs-12 col-sm-3 control-label no-padding-right"
+                                                 >角色</label>
+                                            <!--th:utext="#{appointment.age}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
-																		<select class="chosen-select form-control" th:field="*{role}" id="age" data-placeholder="Choose a age...">
+																		<select class="chosen-select form-control"
+                                                                                th:field="*{role}" id="age"
+                                                                                data-placeholder="Choose a age...">
 
-																		<option th:each="a : ${roles}" th:value="${{a}}" th:text="${a.roleName}"></option>
+																		<option th:each="a : ${roles}" th:value="${{a}}"
+                                                                                th:text="${a.roleName}"></option>
 																		</select>
                                                                         <!--i class="ace-icon fa fa-times-circle red"></i-->
 																	</span>
                                             </div>
-                                            <div class="help-block col-xs-12 col-sm-reset inline "><label th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="validation-message inline"></label></div>
+                                            <div class="help-block col-xs-12 col-sm-reset inline "><label
+                                                    th:if="${#fields.hasErrors('role')}" th:errors="*{role}"
+                                                    class="validation-message inline"></label></div>
                                         </div>
 
 

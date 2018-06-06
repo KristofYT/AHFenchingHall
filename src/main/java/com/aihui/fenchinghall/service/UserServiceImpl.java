@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void findRoleIdByEmail(String email) {
+        userRepository.findByEmail(email);
+    }
+
+    @Override
     public void saveUser(User user) {
         userRepository.save(user);
     }

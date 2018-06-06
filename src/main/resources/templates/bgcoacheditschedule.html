@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/bgframe :: head"></head>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title th:utext="#{fenchinghall}"></title>
+
+    <meta name="description" content="Fenching Hall"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <!-- fenching hall -->
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/stylebg.css"/>
+    <!--  bg -->
+    <link rel="stylesheet" href="/css/ace.min.css"/>
+    <link rel="stylesheet" href="/css/ace-ie.min.css"/>
+    <link rel="stylesheet" href="/css/ace-part2.min.css"/>
+    <link rel="stylesheet" href="/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="/css/ace.min.css"/>
+
+
+    <link rel="stylesheet" href="/css/bgstyle.css"/>
+</head>
 
 <body class="no-skin">
-<div th:replace="fragments/bgframe :: header"></div>
+<div id="header" class="header">
+    <div class="header-left">
+        <a href="../home.html"><img class="logo " src="/images/logo.jpg"/></a>
+    </div>
+
+    <div class="header-right">
+        <div class="header-right-top">
+            <a class="fr btn-danger" style="text-align:center;width: 100px;height: 30px" href="/logout">退出</a>
+        </div>
+
+
+    </div>
+
+</div>
 
 <div id="main-container" class="main-container">
     <div>
         <h1>
-            空闲时间表
+            教练上传空闲时间
         </h1>
     </div>
 
@@ -18,11 +55,11 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="bghome" >首页</a>
+                        <a href="#">首页</a>
                     </li>
 
                     <li>
-                        <a href="#" >空闲时间</a>
+                        <a href="#">教练空闲时间</a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -34,10 +71,10 @@
 
                 <div class="page-header">
                     <h1>
-                        <font >艾晖击剑</font>
+                        <font>艾晖击剑</font>
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            <font >空闲时间</font>
+                            <font>教练空闲时间列表</font>
                         </small>
                         <a class="inline pull-right" href="#">
                             <i class="ace-icon fa fa-plus-circle purple"></i></a>
@@ -49,7 +86,7 @@
                     <div class="col-sm-12">
                         <div class="widget-box">
                             <div class="widget-header">
-                                <h4 class="widget-title">空闲时间</h4>
+                                <h4 class="widget-title">上传个人时间表</h4>
                             </div>
                             <br/>
                             <div class="widget-body">
@@ -69,7 +106,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                  >姓名</label>
+                                            >姓名</label>
                                             <!--th:utext="#{schedule.name}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -87,7 +124,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >当前年份</label>
+                                            >当前年份</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -102,7 +139,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >当前周</label>
+                                            >当前周（第几周）</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -117,7 +154,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >当前周起始时间</label>
+                                            >起始时间</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -132,7 +169,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >周六上午</label>
+                                            >周六早上</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -148,8 +185,8 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >周六下午</label>
-
+                                            >周六下午</label>
+                                            <!--th:utext="#{schedule.sataft}"-->
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
 																		<input type="text" th:field="*{sataft}"
@@ -164,7 +201,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                 >周六晚上</label>
+                                            >周六晚上</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -181,7 +218,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                  >周天上午</label>
+                                            >周天上午</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -197,7 +234,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                  >周天下午</label>
+                                            >周天下午</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -214,7 +251,7 @@
                                         <div class="form-group">
                                             <label for="inputError2"
                                                    class="col-xs-12 col-sm-3 control-label no-padding-right"
-                                                   >周天晚上</label>
+                                            >周天晚上</label>
 
                                             <div class="col-xs-12 col-sm-5">
 																	<span class="input-icon block">
@@ -230,11 +267,6 @@
 
 
                                         <div class="form-actions center">
-                                            <a href="/bgschedule" data-target="#forgot-box"
-                                               class="forgot-password-link">
-                                                <i class="ace-icon fa fa-arrow-left"></i>
-                                                <font th:utext="#{back}"></font>
-                                            </a>
                                             <button type="submit" class="btn btn-sm btn-success">
                                                 <font th:utext="#{submit}"></font>
                                                 <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>

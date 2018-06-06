@@ -8,7 +8,7 @@
 <div id="main-container" class="main-container">
     <div>
         <h1>
-            Appointment
+           空闲时间统计
         </h1>
     </div>
 
@@ -18,11 +18,11 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="#" th:utext="#{home}"></a>
+                        <a href="bghome" >首页</a>
                     </li>
 
                     <li>
-                        <a href="#" th:utext="#{schedule.am}"></a>
+                        <a href="#" >空闲时间</a>
                     </li>
                 </ul><!-- /.breadcrumb -->
 
@@ -34,10 +34,10 @@
 
                 <div class="page-header">
                     <h1>
-                        <font th:utext="#{schedule.am}"></font>
+                        <font >艾晖击剑</font>
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            <font th:utext="#{schedule.am}"></font>
+                            <font >空闲时间</font>
                         </small>
                         <a class="inline pull-right" href="#">
                             <i class="ace-icon fa fa-plus-circle purple"></i></a>
@@ -65,8 +65,7 @@
                                 <div class="clearfix">
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
-                                <div class="table-header" th:utext="#{schedule.list}">
-                                </div>
+                                <div class="table-header" >空闲时间统计表</div>
 
                                 <!-- div.table-responsive -->
 
@@ -75,17 +74,27 @@
                                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th th:utext="#{schedule.id}"></th>
-                                            <th th:utext="#{schedule.name}"></th>
-                                            <th th:utext="#{schedule.year}"></th>
-                                            <th th:utext="#{schedule.week}"></th>
-                                            <th th:utext="#{schedule.satmor}"></th>
-                                            <th th:utext="#{schedule.sataft}"></th>
-                                            <th th:utext="#{schedule.satnig}"></th>
-                                            <th th:utext="#{schedule.sunmor}"></th>
-                                            <th th:utext="#{schedule.sunaft}"></th>
-                                            <th th:utext="#{schedule.sunnig}"></th>
-                                            <th></th>
+                                            <!--<th th:utext="#{schedule.id}"></th>-->
+                                            <!--<th th:utext="#{schedule.name}"></th>-->
+                                            <!--<th th:utext="#{schedule.year}"></th>-->
+                                            <!--<th th:utext="#{schedule.week}"></th>-->
+                                            <!--<th th:utext="#{schedule.satmor}"></th>-->
+                                            <!--<th th:utext="#{schedule.sataft}"></th>-->
+                                            <!--<th th:utext="#{schedule.satnig}"></th>-->
+                                            <!--<th th:utext="#{schedule.sunmor}"></th>-->
+                                            <!--<th th:utext="#{schedule.sunaft}"></th>-->
+                                            <!--<th th:utext="#{schedule.sunnig}"></th>-->
+                                            <th>序号</th>
+                                            <th>教练姓名</th>
+                                            <th>当前年份</th>
+                                            <th>当前周数</th>
+                                            <th>周六上午</th>
+                                            <th>周六下午</th>
+                                            <th>周六晚上</th>
+                                            <th>周天上午</th>
+                                            <th>周天下午</th>
+                                            <th>周天晚上</th>
+                                            <th>操作</th>
                                         </tr>
                                         </thead>
 

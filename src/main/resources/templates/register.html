@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/frame :: head"></head>
-
-<body class="no-skin" >
+<link rel="stylesheet" href="/css/login.css"/>
+<body class="no-skin">
 <div th:replace="fragments/frame :: header"></div>
 
 <div id="main-container" class="main-container">
+    <div class="login">
 
-    <div class="main_left" style="padding-left:10px;">
+        <div class="login_left fl">
+            <img src="../images/login.jpg" height="350px" width="350px" alt="login_left"/>
+        </div>
 
-
-    </div>
-
-    <div class="main_right">
-        <div class="col-lg-4">
+        <div class="login_right fr">
+        <div class="col-lg-4" style="max-width: 100%">
             <div class="card">
                 <div class="card-header text-lg-center">
                     注册
                 </div>
-                <form class="card-body"  id="form_post" >
+                <form class="card-body" id="form_post">
                     <div class="form-group">
                         <input name="email" type="text" class="form-control" id="email" placeholder="请输入您的Email"/>
                     </div>
                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" id="password" placeholder="请输入您的密码"/>
-                    </div>a
+                        <input name="password" type="password" class="form-control" id="password"
+                               placeholder="请输入您的密码"/>
+                    </div>
                     <div class="form-group">
                         <input name="name" type="text" class="form-control" id="name" placeholder="请输入您的姓名"/>
                     </div>
                     <div class="form-group">
-                        <input  type="tel" name="phone" class="form-control" id="phone" placeholder="请输入您的联系电话"/>
+                        <input type="tel" name="phone" class="form-control" id="phone" placeholder="请输入您的联系电话"/>
                     </div>
-                    <button  onclick="postRegister()" class="btn btn-primary btn-block">注册</button>
+                    <button onclick="postRegister()" class="btn btn-primary btn-block" style="position: center">注册
+                    </button>
                 </form>
                 <div class="card-footer text-muted">
                     咨询热线 17723665375
@@ -40,60 +42,61 @@
         </div>
 
     </div>
-
-    <div th:replace="fragments/footer :: footer"></div>
-
-    <th:block th:replace="fragments/script :: script"></th:block>
-    <script type="text/javascript" th:inline="javascript">
-        window.onload = function () {
-            menu();
-        }
-        // 提交预约，ajax异步刷新
-        function postRegister(){
-            console.log("postRegister = " + $('#form_post').serialize());
-
-            // // 判断是否登录
-            // if(document.getElementById('session').value==null)
-            // {
-            //     alert('请先登陆后再提交预约！');
-            //     return false;
-            // }
-
-            //判断输入是否为空
-            if ( document.getElementById('email').value=="")
-            {
-                alert('请输入您的名字！');
-                return false;
-            }
-
-            // 判断输入的电话号码是否正确
-            var phone=document.getElementById('phone').value;
-            if(!(/^1[34578]\d{9}$/.test(phone))){
-                alert("手机号码有误，请重填！");
-                return false;
-            }
-
-
-            $.ajax({
-                type: "post",
-                url: "/register",
-                data: $('#form_post').serialize(),
-                dataType: 'text',
-                success: function (data) {
-                    // alert(" " + " 提交成功，请等候教练电话与你确认 ");
-                    console.log("success data " + data);
-                    window.location.href = "/login";
-                },
-                error: function (xhr, type, errorThrown) {
-                    console.log(" xhr = "+JSON.stringify(xhr).toString() + "   type = " +type.toString()+ "  errorThrown ="+errorThrown.toString());
-                    // alert(errorThrown.toString() + "     提交失败，请重新输入姓名和联系电话");
-                }
-            });
-            alert(" " + " 注册成功，请登录预订 ");
-            window.location.href="login";
-        }
-    </script>
 </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+<script type="text/javascript" th:inline="javascript">
+    window.onload = function () {
+        menu();
+    }
+
+    // 提交预约，ajax异步刷新
+    function postRegister() {
+        console.log("postRegister = " + $('#form_post').serialize());
+
+        // // 判断是否登录
+        // if(document.getElementById('session').value==null)
+        // {
+        //     alert('请先登陆后再提交预约！');
+        //     return false;
+        // }
+
+        //判断输入名字是否为空
+        if (document.getElementById('email').value == "") {
+            alert('请输入您的名字！');
+            return false;
+        }
+
+        // 判断输入的电话号码是否正确
+        var phone = document.getElementById('phone').value;
+        if (!(/^1[34578]\d{9}$/.test(phone))) {
+            alert("手机号码有误，请重填！");
+            return false;
+        }
+
+
+        $.ajax({
+            type: "post",
+            url: "/register",
+            data: $('#form_post').serialize(),
+            dataType: 'text',
+            success: function (data) {
+                // alert(" " + " 注册成功 ");
+                console.log("success data " + data);
+                window.location.href = "/login";
+            },
+            error: function (xhr, type, errorThrown) {
+                console.log(" xhr = " + JSON.stringify(xhr).toString() + "   type = " + type.toString() + "  errorThrown =" + errorThrown.toString());
+                // alert(errorThrown.toString() + "   注册失败");
+            }
+        });
+        alert(" " + " 注册成功 ");
+        window.location.href = "login";
+    }
+</script>
+
 </body>
 </html>
 

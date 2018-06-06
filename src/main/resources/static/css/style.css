@@ -54,7 +54,8 @@ a#nav5:hover{ background-position:left -54px;}
 a#nav6:hover{ background-position:left -54px;}
 #nav7{ display:block; width:85px;height:54px;background:url(../images/nav7.jpg) no-repeat;}
 a#nav7:hover{background-position:left -54px;}
-
+#nav8{ display:block; width:85px;height:54px;background:url(../images/nav8.jpg) no-repeat;}
+a#nav8:hover{background-position:left -54px;}
 
 
 .main-container{
